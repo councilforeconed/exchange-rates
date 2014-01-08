@@ -1,3 +1,5 @@
+require 'rack'
+
 use Rack::Static,
   :urls => ["/scripts", "/styles"],
   :root => "dist"
