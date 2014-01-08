@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-md-6">
+    <h4>Convert USD to </h4>
+    {{view Ember.Select content=currencies value=currencySelected class="form-control" prompt="Select Foreign Currency"}}
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>USD</th>
+          <th>{{currencySelected}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{input type="number" value=amountUSD}}</td>
+          <td>{{formatCurrency USDToForeign}}</td>
+        </tr>
+        <tr>
+          <td>{{formatCurrency ForeignToUSD}}</td>
+          <td>{{input type="number" value=amountForeign}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Add a New Expense</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <form role="form" {{action "expenseSubmission" on="submit"}}>
+          <div class="form-group">
+            <label for="newExpenseDescription">Expense Description</label>
+            {{input type="text" class="form-control" value=newExpenseDescription placeholder="Expense Description" id="newExpenseDescription"}}
+          </div>
+          <div class="form-group">
+            <label for="cost">Expense Cost</label>
+            <div class="input-group">
+              {{input type="number" class="form-control" value=newExpenseCost placeholder="Amount"}}
+              <span class="input-group-addon">{{currencySelected}}</span>
+            </div>
+          </div>
+          <button type="submit" {{bind-attr class=":btn :btn-primary newExpenseDescription::disabled canSubmitNewForm::disabled"}}>Submit Item</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="well">
+          <h4>
+            {{#if newExpenseDescription}}
+              {{newExpenseDescription}}
+            {{else}}
+              New Item
+            {{/if}}
+          </h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{currencySelected}} ({{dateToday}})</td>
+                <td>{{formatCurrency newExpenseCost}}</td>
+              </tr>
+              <tr>
+                <td>USD ({{dateToday}})</td>
+                <td>{{formatCurrency newExpenseCostInCurrentUSD}}</td>
+              </tr>
+              <tr>
+                <td>USD ({{dateTwoMonthsAgo}})</td>
+                <td>{{formatCurrency newExpenseCostInTwoMonthsAgoUSD}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Expense Log</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Currency</th>
+          <th>Amount in Foreign Currency</th>
+          <th>Amount in USD Today</th>
+          <th>Amount in USD Two Months Ago</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each expenseList}}
+        <tr>
+          <td>{{this.description}}</td>
+          <td>{{this.foreignCurrency}}</td>
+          <td>{{formatCurrency this.amount}}</td>
+          <td>{{formatCurrency this.amountInUSDToday}}</td>
+          <td>{{formatCurrency this.amountInUSDTwoMonthsAgo}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

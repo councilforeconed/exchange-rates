@@ -1,0 +1,1 @@
+ExchangeRates.ApplicationController = Ember.Controller.extend({});
