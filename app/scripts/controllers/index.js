@@ -42,12 +42,27 @@ ExchangeRates.IndexController = Ember.Controller.extend({
     })
     return expenses;
   }.property('expenses.@each'),
+  totalInUSDToday: function () {
+    return this.get('expenses').reduce(function (previous, current) {
+      return previous + current.amountInUSDToday;
+    }, 0);
+  }.property('expenses.@each'),
+  totalInUSDTwoMonthsAgo: function () {
+    return this.get('expenses').reduce(function (previous, current) {
+      return previous + current.amountInUSDTwoMonthsAgo;
+    }, 0);
+  }.property('expenses.@each'),
+  totalInForeignCurrency: function () {
+    return this.get('expenses').reduce(function (previous, current) {
+      return previous + current.amount;
+    }, 0);
+  }.property('expenses.@each'),
   
   actions: {
     expenseSubmission: function () {
       var expense = {
         description: this.get('newExpenseDescription'),
-        amount: this.get('newExpenseCost'),
+        amount: parseFloat(this.get('newExpenseCost')),
         amountInUSDToday: this.get('newExpenseCostInCurrentUSD'),
         amountInUSDTwoMonthsAgo: this.get('newExpenseCostInTwoMonthsAgoUSD'),
         foreignCurrency: this.get('currencySelected'),

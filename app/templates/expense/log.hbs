@@ -19,5 +19,12 @@
       <td>{{formatCurrency this.amountInUSDTwoMonthsAgo}}</td>
     </tr>
     {{/each}}
+    <tr>
+      <th>Total</th>
+      <th>{{currencySelected}}</th>
+      <th>{{formatCurrency totalInForeignCurrency}}</th>
+      <th>{{formatCurrency totalInUSDToday}}</th>
+      <th>{{formatCurrency totalInUSDTwoMonthsAgo}}</th>
+    </tr>
   </tbody>
 </table>
