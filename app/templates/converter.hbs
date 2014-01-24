@@ -1,0 +1,20 @@
+<form parsley-validate>
+<table class="table">
+  <thead>
+    <tr>
+      <th>USD</th>
+      <th>{{currencySelected}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{view ExchangeRates.NumberField value=amountUSD min="0"}}</td>
+      <td>{{formatCurrency USDToForeign}}</td>
+    </tr>
+    <tr>
+      <td>{{formatCurrency ForeignToUSD}}</td>
+      <td>{{view ExchangeRates.NumberField value=amountForeign min="0"}}</td>
+    </tr>
+  </tbody>
+</table>
+</form>

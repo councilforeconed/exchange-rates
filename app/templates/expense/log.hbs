@@ -1,0 +1,23 @@
+<h3>Expense Log</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Currency</th>
+      <th>Amount in Foreign Currency</th>
+      <th>Amount in USD Today</th>
+      <th>Amount in USD Two Months Ago</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each expenseList}}
+    <tr>
+      <td>{{this.description}}</td>
+      <td>{{this.foreignCurrency}}</td>
+      <td>{{formatCurrency this.amount}}</td>
+      <td>{{formatCurrency this.amountInUSDToday}}</td>
+      <td>{{formatCurrency this.amountInUSDTwoMonthsAgo}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
