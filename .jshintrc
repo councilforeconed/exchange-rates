@@ -18,7 +18,6 @@
         "ExchangeRates": true,
         "jQuery": true,
         "Ember": true,
-        "Handlebars": true,
-        "DS": true
+        "Handlebars": true
     }
 }
