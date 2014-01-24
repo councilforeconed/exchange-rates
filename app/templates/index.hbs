@@ -13,12 +13,12 @@
       </thead>
       <tbody>
         <tr>
-          <td>{{input type="number" value=amountUSD}}</td>
+          <td>{{view ExchangeRates.NumberField value=amountUSD min="0"}}</td>
           <td>{{formatCurrency USDToForeign}}</td>
         </tr>
         <tr>
           <td>{{formatCurrency ForeignToUSD}}</td>
-          <td>{{input type="number" value=amountForeign}}</td>
+          <td>{{view ExchangeRates.NumberField value=amountForeign min="0"}}</td>
         </tr>
       </tbody>
     </table>
@@ -38,7 +38,7 @@
           <div class="form-group">
             <label for="cost">Expense Cost</label>
             <div class="input-group">
-              {{input type="number" class="form-control" value=newExpenseCost placeholder="Amount"}}
+              {{view ExchangeRates.NumberField type="number" min="0" class="form-control" value=newExpenseCost placeholder="Amount"}}
               <span class="input-group-addon">{{currencySelected}}</span>
             </div>
           </div>

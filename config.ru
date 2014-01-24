@@ -2,7 +2,7 @@ require 'rack'
 
 use Rack::Static,
   :urls => ["/scripts", "/styles"],
-  :root => "./dist"
+  :root => "dist"
 
 run lambda { |env|
   [
