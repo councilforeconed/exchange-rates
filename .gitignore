@@ -5,3 +5,5 @@ dist
 .tmp
 app/bower_components
 .idea
+*.un~
+.bundle
