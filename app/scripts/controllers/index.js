@@ -24,7 +24,7 @@ ExchangeRates.IndexController = Ember.Controller.extend({
     return this.get('amountForeign') / this.get('foreignRate');
   }.property('amountForeign', 'foreignRate'),
   newExpenseDescription: null,
-  newExpenseCost: 0,
+  newExpenseCost: "0",
   newExpenseCostInCurrentUSD: function () {
     return this.get('newExpenseCost') / this.get('foreignRate');
   }.property('newExpenseCost', 'foreignRate'),

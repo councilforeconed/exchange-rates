@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
-gem 'rack'
 
-ruby '2.0.0'
+gem 'rack'
+gem 'compass'
+
+ruby '2.1.0'

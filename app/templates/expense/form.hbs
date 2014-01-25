@@ -4,11 +4,8 @@
     {{input type="text" class="form-control" value=newExpenseDescription placeholder="Expense Description" id="newExpenseDescription"}}
   </div>
   <div class="form-group">
-    <label for="cost">Expense Cost</label>
-    <div class="input-group">
-      {{view ExchangeRates.NumberField type="number" min="0" class="form-control" value=newExpenseCost placeholder="Amount"}}
-      <span class="input-group-addon">{{currencySelected}}</span>
-    </div>
+    <label for="cost">Expense Cost in {{currencySelected}}</label>
+    {{currency-field amount=newExpenseCost}}
   </div>
   <button type="submit" {{bind-attr class=":btn :btn-primary newExpenseDescription::disabled canSubmitNewForm::disabled"}}>Submit Item</button>
 </form>

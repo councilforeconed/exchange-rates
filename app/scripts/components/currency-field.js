@@ -1,6 +1,8 @@
 ExchangeRates.CurrencyFieldComponent = Ember.Component.extend({
   tagName: 'div',
   classNames: ['form-group'],
-  classNameBindings: ['isUrgent'],
-  isUrgent: true
+  classNameBindings: ['hasError'],
+  hasError: function () {
+    return !this.get('amount');
+  }.property('amount')
 });
