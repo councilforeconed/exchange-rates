@@ -1,9 +1,19 @@
-<div class="row">
-  <div class="col-md-6">
-    <h4>Convert USD to </h4>
-    {{view Ember.Select content=currencies value=currencySelected class="form-control" prompt="Select Foreign Currency"}}
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-5 text-center">
+      <p class="usd-currency">USD</p>
+    </div>
+    <div class="col-md-2 text-center">
+      <p>&rarr;</p>
+    </div>
+    <div class="col-md-5 text-center">
+      {{view Ember.Select content=currencies value=currencySelected class="form-control" prompt="Select Foreign Currency"}}
+    </div>
   </div>
-  <div class="col-md-6">
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     {{view ExchangeRates.CurrencyConverter}}
   </div>
 </div>
