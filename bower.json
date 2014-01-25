@@ -4,6 +4,6 @@
   "dependencies": {
     "ember": "1.2.0",
     "bootstrap-sass": "~3.0.0",
-    "parsleyjs": "~1.2.3"
+    "moment": "~2.5.1"
   }
 }
