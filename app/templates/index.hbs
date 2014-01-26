@@ -1,14 +1,6 @@
-<div class="jumbotron">
-  <div class="row">
-    <div class="col-md-5 text-center">
-      <p class="usd-currency">USD</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <p>&rarr;</p>
-    </div>
-    <div class="col-md-5 text-center">
-      {{view Ember.Select content=currencies value=currencySelected class="form-control" prompt="Select Foreign Currency"}}
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    {{view ExchangeRates.CurrencySelector}}
   </div>
 </div>
 
@@ -20,15 +12,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h3>Add a New Expense</h3>
-    <div class="row">
-      <div class="col-md-6">
-        {{view ExchangeRates.ExpenseForm}}
-      </div>
-      <div class="col-md-6">
-        {{view ExchangeRates.ExpenseInfo}}
-      </div>
-    </div>
+    {{view ExchangeRates.ExpenseSubmission}}
   </div>
 </div>
 

@@ -1,21 +1,33 @@
 @import "bootstrap-sass/lib/bootstrap";
+@import "./custom-variables";
 
 /* Put your CSS here */
 html, body {
-    margin: 30px 0;
+  margin: 50px 0;
 }
 
-.jumbotron {
-  $jumbotron-font-size: 2.5em;
+.currency-selector {
+  padding: 2em;
+  border: 1px solid $green;
+  background-color: lighten($green, 40%);
   p {
-    font-size: $jumbotron-font-size;
+    font-size: $font-size-h3;
     font-weight: bold;
   }
-  select {
-    font-size: $jumbotron-font-size;
-    font-weight: bold;
-    height: 1.35em;
-    width: 4em;
-    margin: auto;
+  select: {
+    display: inline;
+  };
+}
+
+.expense-form {
+  margin-bottom: 10px;
+  button: {
+    width: 100%;
   }
+}
+
+.expense-info {
+  padding: 1em;
+  border: 1px solid $yellow;
+  background-color: lighten($yellow, 40%);
 }

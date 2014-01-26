@@ -71,7 +71,7 @@ ExchangeRates.IndexController = Ember.Controller.extend({
       }
       
       this.set('newExpenseDescription', null);
-      this.set('newExpenseCost', 0);
+      this.set('newExpenseCost', "0");
       
       var expenses = Em.A(this.get('expenses'));
       expenses.push(expense);

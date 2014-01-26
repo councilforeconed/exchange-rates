@@ -1,0 +1,43 @@
+$border-radius-base:             0px;
+$border-radius-large:            0px;
+$border-radius-small:            0px;
+
+$navy: #001F3F;
+$blue: #0074D9;
+$aqua: #7FDBFF;
+$teal: #39CCCC;
+$olive: #3D9970;
+$green: #2ECC40;
+$lime: #01FF70;
+$yellow: #FFDC00;
+$orange: #FF851B;
+$red: #FF4136;
+$maroon: #85144B;
+$fuchsia: #F012BE;
+$purple: #B10DC9;
+$white: #FFFFFF;
+$silver: #DDDDDD;
+$gray: #AAAAAA;
+$black: #111111;
+
+$input-bg:                       $white;
+$input-bg-disabled:              $gray-lighter;
+
+$input-color:                    $black;
+$input-border:                   none;
+$input-border-radius:            $border-radius-base;
+$input-border-focus:             #66afe9   ;
+
+$input-color-placeholder:        $gray-light;
+
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2)   ;
+$input-height-large:             (floor($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2)   ;
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2)   ;
+
+$legend-color:                   $gray-dark;
+$legend-border-color:            #e5e5e5   ;
+
+$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-border-color: $input-border;
+
+@import "bootstrap-sass/lib/bootstrap";
