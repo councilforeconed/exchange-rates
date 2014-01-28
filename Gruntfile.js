@@ -355,7 +355,12 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'concurrent:dist',
+        'emberTemplates',
+        'coffee',
+        'compass:dist',
+        'imagemin',
+        'svgmin',
+        'htmlmin'
         'neuter:app',
         'concat',
         'cssmin',
