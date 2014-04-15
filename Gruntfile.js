@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+        pkg: grunt.file.readJSON('package.json'),
         watch: {
             emberTemplates: {
                 files: '<%= yeoman.app %>/templates/**/*.hbs',
@@ -326,6 +327,13 @@ module.exports = function (grunt) {
                 src: '<%= yeoman.app %>/scripts/app.js',
                 dest: '.tmp/scripts/combined-scripts.js'
             }
+        },
+        exec: {
+          deploy: {
+            command: 'scp -r dist/* cee:~/technology/<%= pkg.name %>',
+            stdout: true,
+            stderr: true
+          }
         }
     });
 
@@ -368,6 +376,11 @@ module.exports = function (grunt) {
         'copy',
         'rev',
         'usemin'
+    ]);
+    
+    grunt.registerTask('deploy', [
+      'build',
+      'exec:deploy'
     ]);
 
     grunt.registerTask('default', [
