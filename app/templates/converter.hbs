@@ -8,12 +8,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>{{currency-field amount=amountUSD}}</td>
-      <td>{{formatCurrency USDToForeign}}</td>
+      <td>{{view ExchangeRates.NumberField value=amountUSD class="form-control" min="0"}}</td>
+      <td><div class="currency-conversion">{{formatCurrency USDToForeign}}</div></td>
     </tr>
     <tr>
-      <td>{{formatCurrency ForeignToUSD}}</td>
-      <td>{{currency-field amount=amountForeign}}</td>
+      <td><div class="currency-conversion">{{formatCurrency ForeignToUSD}}</div></td>
+      <td>{{view ExchangeRates.NumberField value=amountForeign class="form-control" min="0"}}</td>
     </tr>
   </tbody>
 </table>

@@ -32,9 +32,10 @@
 .expense-info {
   padding: 1em;
   border: 1px solid $yellow;
-  background-color: lighten($yellow, 40%);
+  background-color: lighten($yellow, 30%);
+  min-height: 265px;
 }
 
-.converted-currency {
-  margin: 0;
+.currency-conversion {
+  margin-top: 0.5em;
 }
