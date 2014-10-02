@@ -4,7 +4,7 @@
   "dependencies": {
     "jquery": "~2.0",
     "ember": "1.4.0",
-    "bootstrap-sass": "~3.0.0",
+    "bootstrap-sass": "~3.0.2",
     "moment": "~2.5.1",
     "numeral": "~1.5.3"
   }
