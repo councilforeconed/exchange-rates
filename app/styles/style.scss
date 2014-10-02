@@ -1,10 +1,13 @@
-@import "bootstrap-sass/lib/bootstrap";
-@import "./custom-variables";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
-/* Put your CSS here */
-html, body {
-  margin: 50px 0;
-}
+@import "./colors";
+@import "./variables";
+
+@import "bootstrap-sass/lib/bootstrap";
+
+@import "./typography";
+@import "./header";
+@import "./footer";
 
 .currency-selector {
   padding: 2em;
@@ -30,4 +33,8 @@ html, body {
   padding: 1em;
   border: 1px solid $yellow;
   background-color: lighten($yellow, 40%);
+}
+
+.converted-currency {
+  margin: 0;
 }
